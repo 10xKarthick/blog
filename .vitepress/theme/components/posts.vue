@@ -1,22 +1,15 @@
 <template>
   <div class="divide-y divide-slate-100 px-2 md:pl-20">
     <div class="w-full pt-1">
-      <ul class="divide-y divide-slate-100">
-        <li class="mx-4 md:mx-0">
-          <a class="w-full mx-5 md:w-2/3 " v-for="item in posts" :href="withBase(item.regularPath)">
+      <ul class="divide-y divide-slate-300">
+        <li class="mx-4 md:mx-0" v-for="item in posts">
+          <a class="w-full mx-5 md:w-2/3 "  :href="withBase(item.regularPath.toLowerCase())">
             <div class="title">{{ item.frontMatter.title }}</div>
             <div class="date">{{ transDate(item.frontMatter.date) }}</div>
             <div class="text-justify">{{ item.frontMatter.description }}</div>
           </a>
         </li>
       </ul>
-      <!-- <div class="divide-y divide-slate-100 mx-4 md:mx-0 justify-center ">
-        <a class="w-full mx-5 md:w-2/3" v-for="item in posts" :href="withBase(item.regularPath)">
-          <div class="title">{{ item.frontMatter.title }}</div>
-          <div class="date">{{ transDate(item.frontMatter.date) }}</div>
-          <div class="text-justify">{{ item.frontMatter.description }}</div>
-        </a>
-      </div> -->
     </div>
     <div class="flex flex-row justify-center items-center py-3">
       <button :class="['left pl-3 md:pl-20 ', pageCurrent <= 1 ? 'opacity-20' : 'opacity-100']"
@@ -31,28 +24,6 @@
       </button>
     </div>
   </div>
-  <!-- <div class="container w-full mx-auto justify-center items-center">
-    <div class="container flex flex-col flex-wrap py-4">
-      <main class="w-full pt-1 px-2 pl-0 md:pl-20">
-        <div class="mx-5 md:mx-0 justify-center">
-          <a class="w-full mx-5 md:w-2/3" v-for="item in posts" :href="withBase(item.regularPath)">
-            <div class="title">{{ item.frontMatter.title }}</div>
-            <div class="date">{{ transDate(item.frontMatter.date) }}</div>
-            <div class="">{{ item.frontMatter.description }}</div>
-          </a>
-        </div>
-      </main>
-    </div>
-    <div class="flex flex-row">
-      <button class="left" v-show="pageCurrent > 1" @click="go(pageCurrent - 1)">
-        Previous page
-      </button>
-      <div v-if="pagesNum > 1">{{ `${pageCurrent}/${pagesNum}` }}</div>
-      <button class="right" v-show="pageCurrent < pagesNum" @click="go(pageCurrent + 1)">
-        Next page
-      </button>
-    </div>
-  </div> -->
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
@@ -80,7 +51,7 @@ pagesNum = parseInt(pagesNum.toString());
 let pageCurrent = ref(1);
 // filter index post
 postsAll = postsAll.filter((item: post) => {
-  return item.regularPath.indexOf("index") < 0;
+  return item.regularPath.toLowerCase().indexOf("index") < 0;
 });
 // pagination
 let allMap = {};
