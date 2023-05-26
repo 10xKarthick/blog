@@ -1,8 +1,8 @@
 <template>
     <div class="container mx-auto">
         <div class="container mx-auto pt-1 flex flex-col">
-            <div>
-                <p class="text-center md:text-left text-2xl font-medium underline">Recent Blogs</p>
+            <div v-if="posts">
+                <p class="text-center md:text-left text-2xl font-medium underline">Recent Posts</p>
             </div>
             <div>
                 <div class="divide-y divide-slate-300">

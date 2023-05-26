@@ -40,16 +40,17 @@ async function config() {
       nav: [
         { text: "Home", link: "/" },
         { text: "Posts", link: "/posts" },
-        { text: "Tags", link: "/tags" },
+        // { text: "Tags", link: "/tags" },
         { text: "About Me", link: "/about" },
       ],
       sidebar: getSideBar(),
       aside: false,
       socialLinks: [
-        { icon: 'github', link: 'https://github.com/' },
-        { icon: 'twitter', link: 'https://www.twitter.com/' },
-        { icon: 'linkedin', link: 'https://www.linkedin.com/' },
-        { icon: 'discord', link: 'https://discord.com/' }
+        { icon: 'github', link: 'https://github.com/10xKarthick' },
+        { icon: 'twitter', link: 'https://twitter.com/10xKarthick' },
+        { icon: 'linkedin', link: 'https://www.linkedin.com/in/karthickraj-s/' },
+        { icon: 'discord', link: 'https://discord.com/channels/10xKarthick#5058' },
+        { icon: 'youtube', link: 'https://www.youtube.com/@10xKarthick'}
       ]
     },
   };
