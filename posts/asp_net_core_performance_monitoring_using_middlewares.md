@@ -122,6 +122,8 @@ public class DemoController : ControllerBase
 
 Now, if we run our application and make requests to these APIs, we can monitor their performance right from our console.
 
+[Here is the github link to the source code](https://github.com/10xKarthick/Perf-Monitor-Middleware-Demo)
+
 ## Conclusion
 
 And voila! You now have a basic performance monitoring tool for your ASP.NET Core application. This tool can be incredibly valuable during development, especially when you're trying to identify performance issues.
