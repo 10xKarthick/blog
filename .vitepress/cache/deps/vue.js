@@ -1,5 +1,3 @@
-import "./chunk-7FP5O474.js";
-
 // node_modules/@vue/shared/dist/shared.esm-bundler.js
 function makeMap(str, expectsLowerCase) {
   const map2 = /* @__PURE__ */ Object.create(null);
@@ -121,7 +119,7 @@ function normalizeStyle(value) {
 }
 var listDelimiterRE = /;(?![^(]*\))/g;
 var propertyDelimiterRE = /:([^]+)/;
-var styleCommentRE = new RegExp("\\/\\*.*?\\*\\/", "gs");
+var styleCommentRE = /\/\*[^]*?\*\//g;
 function parseStringStyle(cssText) {
   const ret = {};
   cssText.replace(styleCommentRE, "").split(listDelimiterRE).forEach((item) => {
@@ -1421,7 +1419,7 @@ function popWarningContext() {
   stack.pop();
 }
 function warn2(msg, ...args) {
-  if (false !== "production")
+  if (false)
     return;
   pauseTracking();
   const instance = stack.length ? stack[stack.length - 1].component : null;
@@ -1520,7 +1518,7 @@ function formatProp(key, value, raw) {
   }
 }
 function assertNumber(val, type) {
-  if (false !== "production")
+  if (false)
     return;
   if (val === void 0) {
     return;
@@ -3389,7 +3387,7 @@ var BaseTransitionImpl = {
             }
             child = c;
             hasFound = true;
-            if (false !== "production")
+            if (false)
               break;
           }
         }
@@ -8916,7 +8914,7 @@ function isShallow2(value) {
   return !!(value && value["__v_isShallow"]);
 }
 function initCustomFormatter() {
-  if (false !== "production" || typeof window === "undefined") {
+  if (typeof window === "undefined") {
     return;
   }
   const vueStyle = { style: "color:#3ba776" };
@@ -9114,7 +9112,7 @@ function isMemoSame(cached, memo) {
   }
   return true;
 }
-var version = "3.3.2";
+var version = "3.3.4";
 var _ssrUtils = {
   createComponentInstance,
   setupComponent,

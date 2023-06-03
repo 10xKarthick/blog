@@ -10,19 +10,18 @@ date: 2023-05-29
 
 # ASP.NET Core Performance Monitoring using Middlware
 
-> Today, we're stepping into the realm of ASP<span>.NET</span> Core to explore a fundamental aspect of web development - performance monitoring. Specifically, we'll learn how to create a custom middleware to monitor and log the execution time of our HTTP requests. 
+> <p class="text-justify">Today, we're stepping into the realm of ASP<span>.NET</span> Core to explore a fundamental aspect of web development - performance monitoring. Specifically, we'll learn how to create a custom middleware to monitor and log the execution time of our HTTP requests. </p>
 >
-> By the end of this blog post, you'll have a new tool in your .NET toolbox - a performance monitoring middleware.
+> <p class="text-justify">By the end of this blog post, you'll have a new tool in your .NET toolbox - a performance monitoring middleware.</p>
 
 <br />
 <iframe
-    width="800"
-    height="400"
     src="https://www.youtube.com/embed/_wzBvlpdQIE"
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen
     style="text-align: center;"
+    class="w-full lg:w-2/3 aspect-video"
 ></iframe>
 
 ## Creating the Middleware
@@ -32,7 +31,7 @@ First things first, we need to create our middleware. The middleware will start 
 Here is a simple example of such middleware:
 
 ```csharp
-public class PerformanceMonitoringMiddleware
+public class PerformanceMonitoringMiddleware : IMiddleware
 {
     private readonly ILogger<PerformanceMonitoringMiddleware> _logger;
     private Stopwatch _timer;

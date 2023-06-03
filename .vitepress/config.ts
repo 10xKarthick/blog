@@ -29,7 +29,6 @@ async function config() {
         },
       ],
     ],
-    cleanUrls: "with-subfolders",
     lastUpdated: false,
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
