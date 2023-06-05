@@ -1,10 +1,10 @@
 ---
 title: Asp.Net Core Performance Monitoring using Middlewares
 description: Discover how to create a performance monitoring middleware in ASP.NET Core in our latest blog post! We delve into the steps of building a middleware, integrating it with your pipeline, and using it to monitor two different APIs—one fast and one intentionally slow. Equip yourself with this essential tool for your .NET toolbox!
-tags: 
-    - Asp.Net Core
-    - Performance
-    - Middleware
+tags:
+  - Asp.Net Core
+  - Performance
+  - Middleware
 date: 2023-05-29
 ---
 
@@ -20,8 +20,7 @@ date: 2023-05-29
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen
-    style="text-align: center;"
-    class="w-full lg:w-2/3 aspect-video"
+    class="w-full lg:w-2/3 aspect-video mx-auto"
 ></iframe>
 
 ## Creating the Middleware
@@ -80,10 +79,10 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     app.UseRouting();
 
     app.UseAuthorization();
-    
+
     // Add the performance monitoring middleware here
     app.UseMiddleware<PerformanceMonitoringMiddleware>();
-    
+
     app.UseEndpoints(endpoints =>
     {
         endpoints.MapControllerRoute(
@@ -114,7 +113,7 @@ public class DemoController : ControllerBase
     public async Task<IActionResult> GetSlowAsync()
     {
         await Task.Delay(3000);
-        return Ok("Hello from SlowApi"); 
+        return Ok("Hello from SlowApi");
     }
 }
 ```
