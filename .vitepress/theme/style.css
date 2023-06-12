@@ -92,3 +92,8 @@
 .name, .tagline {
   max-width: 100% !important;
 }
+
+.vp-doc h2 {
+  border-top: 0px;
+  padding-top: 0px;
+}
